@@ -17,7 +17,7 @@
   <a href="file:///D:/proyectoparcial2.2/index.html"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;">MUJER</button></a>
   <a href="file:///D:/proyectoparcial2.2/index2.html#"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;">HOMBRE</button></a>
   <a href="file:///D:/proyectoparcial2.2/index3.html"><button type="button" class="btn btn-default" style="width: 100px:; height: 70px; color: gray;">NIÑOS</button></a>
-  <a href="proyecto3.php"><button type="button" class="btn btn-default" style="width: 120px; height: 70px; color: gray;"><H5>CONSULTAR<br> PRODUCTOS</H5></button></a>
+  <a href="file:///D:/proyectoparcial2.2/index.html"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;"><H5>CONSULTAR<br> PRODUCTOS</H5>></button></a>
   <h1 style="text-align: center;"><b>SHEIN</b> </h1>
 </div>
 

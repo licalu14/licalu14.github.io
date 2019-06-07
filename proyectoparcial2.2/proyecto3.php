@@ -17,7 +17,12 @@
   <a href="file:///D:/proyectoparcial2.2/index.html"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;">MUJER</button></a>
   <a href="file:///D:/proyectoparcial2.2/index2.html#"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;">HOMBRE</button></a>
   <a href="file:///D:/proyectoparcial2.2/index3.html"><button type="button" class="btn btn-default" style="width: 100px:; height: 70px; color: gray;">NIÑOS</button></a>
-  <a href="proyecto3.php"><button type="button" class="btn btn-default" style="width: 120px; height: 70px; color: gray;"><H5>CONSULTAR<br> PRODUCTOS</H5></button></a>
+  <a href="fconsultarAlumnos.php"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;"><H5>CONSULTAR<br> PRODUCTOS</H5>></button></a>
+<a href="registro.php"><button type="button" class="btn btn-default" style="width: 100px; height: 70px; color: gray;"><H5>REGISTRAR</H5></button></a>
+
+
+
+
   <h1 style="text-align: center;"><b>SHEIN</b> </h1>
 </div>
 
@@ -159,7 +164,7 @@
         </li>
       </ul>
       <form class="navbar-form navbar-left">
-        <div class="form-group"">
+        <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" >
         </div>
         
@@ -168,123 +173,109 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  
-	<div class="container">
-    <div class="row">
-      <div class col-xs-12>
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"
-  data-interval="500">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-  </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="foto/1.jpg" width="400" height="400" style="margin-left: 400px;">
-      <div class="carousel-caption">
-      </div>
-  </div>
-  
-    <div class="item">
-      <img src="foto/2.jpg" width="400" height="400" style="margin-left: 400px;">
-      <div class="carousel-caption">
-      </div>
-     </div>    
-    <div class="item">
-      <img src="foto/3.jpg" width="300" height="300" style="margin-left: 400px;">
-      <div class="carousel-caption">
-  </div>
-</div>
-  <div class="item">
-      <img src="foto/4.jpg" width="400" height="400" style="margin-left: 400px;">
-      <div class="carousel-caption">
-    </div>
- </div>
-    <div class="item">
-      <img src="foto/5.jpg" width="250" height="250" style="margin-left: 400px;">
-      <div class="carousel-caption">
-    </div>
-</div>
+<!--editar-->
+
+ 
 
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!--guardar-->
 
 
 
-<div class="container">
-    <div class="col-xs-12">
-      <h1>Blusas de Temporada</h1>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-xs-6 col-xs-4" style="height: 400px;">
-        <!-- inicil panel-->
+
+
+
+
+
+<!--consultar ropa-->
+  <?php 
+    $server="localhost";
+      $username = "root";
+      $pass = "";
+      $db= "ropa";
+
+      $conexion = new mysqli ($server, $username, $pass, $db);
+
+      if($conexion->connect_error){
+          die("Error en la conexión: " . $conexion->connect_error);
+      }
+
+      $sql = "SELECT * FROM ropa";
+      $data = $conexion->query($sql); 
+      echo '<table class="table table-hover">';
+      echo '<thead>';
+      echo '<tr>';
+      echo '<th>id</th>';
+      echo '<th>tipo</th>';
+      echo '<th>color</th>';
+      echo '<th>cantidad</th>';
+      echo '<th>medida</th>';
+
+      echo '</tr>';
+      echo '</thead>';
+      echo '<tbody>';
+      while($obj = $data->fetch_object()){
+        echo '<tr><td>'.$obj->id.'</td>';
+        echo '<td>'.$obj->tipo.'</td>';
+        echo '<td>'.$obj->color.'</td>';
+        echo '<td>'.$obj->cantidad.'</td>';
+        echo '<td>'.$obj->medida.'</td>';
+        echo '<td><a class="btn btn-xs btn-primary" href="editarropa.php?id='.$obj->id.'">Editar</a>  <a class="btn btn-xs btn-default" href="eliminarropa.php?id='.$obj->id.'">Eliminar</a></td></tr>';
       
-  <div class="panel-heading"></div>
-  <div class="panel-body">
-    <a href="https://www.shein.com.mx/Square-Neck-Striped-Fitted-Crop-Tee-p-653166-cat-1738.html"><img src="foto/12.jpg" class="img-responsive" width="250px" height="250px" alt=""></a>
-    <h3 class="text-center" style="color: red;text-align: left;">$MXN77.07</h3>
-  <h4 class="text-center" style="text-align: left;"><s>$MXN177.00</s></h4>
-  </div>
 
-<!--termina paneol-->
-      </div>
-      <!--temina imagemn1-->
-            <!--empieza imagemn2-->
 
-      <div class="col-xs-12 col-xs-6 col-xs-4" style="height: 400px;">
-        <!-- inicil panel-->
-        
-  <div class="panel-heading"></div>
-  <div class="panel-body">
-   <a href="https://www.shein.com.mx/Scallop-Halter-Top-With-Plants-Print-Bikini-Set-p-689642-cat-1866.html"><img src="foto/13.jpg" class="img-responsive " width="250px" height="250px" alt=""></a> 
- <h3 class="text-center" style="color: red;text-align: left;">$MXN253.00</h3>
-  <h4 class="text-center" style="text-align: left;"><s>$MXN361.00</s></h4>
-  </div>
 
-<!--termina paneol-->
-      </div>
-      <!--temina imagemn1-->
-      <!--empieza imagemn2-->
-    
-  <div class="col-xs-12 col-xs-6 col-xs-4" style="height: 400px;border: gray">
-        <!-- inicil panel-->
-        
-  <div class="panel-heading"></div>
-  <div class="panel-body">
-   <a href="https://www.shein.com.mx/Strappy-Backless-Bodysuit-p-345175-cat-1882.html"><img src="foto/14.jpg" class="img-responsive" width="250px" height="250px" alt="" ></a> 
-   <h3 class="text-center" style="color: red;text-align: left;">$MXN155.00</h3>
-  <h4 class="text-center" style="text-align: left;"><s>$MXN222.00</s></h4>
-  </div>
 
-<!--termina paneol-->
-      </div>
-<hr>
-</div>
-</div>
+      }
+   ?>
 
-<!--pie de pagina-->
 
-<!--js para que funcione el menu-->
+
+   <!--/eliminar-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--js para que funcione el menu-->
 <script src="js/bootstrap.js"></script>
 
 </body>
